@@ -21,11 +21,14 @@ export default function ImageCreator() {
     setImageResult(null);
 
     try {
-      const response = await fetch("http://localhost:999/image-generator", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt }),
-      });
+      const response = await fetch(
+        "https://ai-model-back-end.onrender.com/image-generator",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ prompt }),
+        }
+      );
       const data = await response.json();
       if (data.image) {
         setImageResult(data.image);

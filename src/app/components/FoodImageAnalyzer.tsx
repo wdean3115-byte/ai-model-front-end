@@ -65,7 +65,7 @@ export default function FoodIngredientAnalyzer() {
     setIsAnalyzing(true);
     setIngredients(null);
     try {
-      const response = await fetch("http://localhost:999", {
+      const response = await fetch("https://ai-model-back-end.onrender.com/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ imageUrl: logoUrl }),

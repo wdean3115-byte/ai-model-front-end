@@ -24,11 +24,14 @@ export default function FloatingAIAssistant() {
     setInput("");
 
     try {
-      const response = await fetch("http://localhost:999/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: currentInput, mode: "text" }),
-      });
+      const response = await fetch(
+        "https://ai-model-back-end.onrender.com/chat",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: currentInput, mode: "text" }),
+        }
+      );
 
       const data = await response.json();
 

@@ -15,7 +15,7 @@ export default function IngredientRecognition() {
 
     try {
       const response = await fetch(
-        "http://localhost:999/ingredient-generator",
+        "https://ai-model-back-end.onrender.com/ingredient-generator",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
